@@ -21,7 +21,16 @@
 
           # Everything in this list is added to your path
           buildInputs =
-            [
+            pkgs.lib.optionals pkgs.stdenv.isDarwin
+              (with pkgs.darwin.apple_sdk; [
+
+              # Mac specific crypto libs
+              frameworks.CoreFoundation
+              frameworks.CoreServices
+              frameworks.SystemConfiguration
+
+            ]) ++ [
+
               # A nice LSP IDE backend
               pkgs.rust-analyzer
 
