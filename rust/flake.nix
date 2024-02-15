@@ -44,7 +44,7 @@
                 extensions = [ "rust-src" ];
 
                 # Add foreign compile targets here
-                targets = [ "wasm32-unknown-unknown" "x86_64-apple-darwin" ];
+                targets = [ "wasm32-unknown-unknown" "x86_64-apple-darwin" "wasm32-wasi" ];
             })
             ];
         };
